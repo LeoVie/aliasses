@@ -1,4 +1,4 @@
-# Git and Bash aliasses
+# Aliasses
 
 ## Git (.gitconfig)
 ```
