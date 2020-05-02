@@ -2,9 +2,10 @@
 
 ## Git (.gitconfig)
 ```
-st = status
-adda = add -A
-com = commit -m
+[alias]
+  st = status
+  adda = add -A
+  com = commit -m
 ```
 
 ## Bash (.bashrc)
