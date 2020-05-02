@@ -16,4 +16,5 @@ alias cd..2='cd ../..'
 alias cd..3='cd ../../..'
 alias cd..4='cd ../../../..'
 alias git-recursive-clean='git clean -xffd && git submodule foreach --recursive git clean -xffd'
+export PYTHONIOENCODING="utf-8"
 ```
