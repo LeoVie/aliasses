@@ -19,4 +19,6 @@ alias cd..4='cd ../../../..'
 alias git-recursive-clean='git clean -xffd && git submodule foreach --recursive git clean -xffd'
 export PYTHONIOENCODING="utf-8"
 alias mergepdf='qpdf --empty --pages [0-9][0-9]_*.pdf -- '
+alias dcu='docker-compose up -d'
+alias dcd='docker-compose down'
 ```
