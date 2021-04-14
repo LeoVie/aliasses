@@ -21,4 +21,5 @@ export PYTHONIOENCODING="utf-8"
 alias mergepdf='qpdf --empty --pages [0-9][0-9]_*.pdf -- '
 alias dcu='docker-compose up -d'
 alias dcd='docker-compose down'
+alias bytesize='stat --format="%s" '
 ```
