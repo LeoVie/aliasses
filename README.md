@@ -23,4 +23,6 @@ alias dcu='docker-compose up -d'
 alias dcd='docker-compose down'
 alias bytesize='stat --format="%s" '
 alias phpversion='sudo update-alternatives --config php'
+alias python='python3'
+alias pip='pip3'
 ```
