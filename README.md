@@ -26,4 +26,5 @@ alias phpversion='sudo update-alternatives --config php'
 alias python='python3'
 alias pip='pip3'
 alias exp='explorer.exe .'
+alias ta='XDEBUG_MODE=coverage composer testall'
 ```
