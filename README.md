@@ -27,4 +27,6 @@ alias python='python3'
 alias pip='pip3'
 alias exp='explorer.exe .'
 alias ta='XDEBUG_MODE=coverage composer testall'
+alias xdebug-on='sudo phpenmod xdebug'
+alias xdebug-off='sudo phpdismod xdebug'
 ```
