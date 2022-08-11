@@ -26,4 +26,6 @@ alias exp='explorer.exe .'
 alias ta='XDEBUG_MODE=coverage composer testall'
 alias xdebug-on='sudo phpenmod xdebug'
 alias xdebug-off='sudo phpdismod xdebug'
+alias show-redirects
+follow-redirects() { wget -S --spider "$1" 2>&1  | grep -oP '^--[[:digit:]: -]{19}--  \K.*'; }
 ```
