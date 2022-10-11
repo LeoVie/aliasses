@@ -27,7 +27,6 @@ alias exp='explorer.exe .'
 alias ta='XDEBUG_MODE=coverage composer testall'
 alias xdebug-on='sudo phpenmod xdebug'
 alias xdebug-off='sudo phpdismod xdebug'
-alias show-redirects
 alias gitssh='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/private_openssh.ppk'
 alias comt='~/scripts/commit-with-ticket.sh'
 alias ta='XDEBUG_MODE=coverage composer testall'
