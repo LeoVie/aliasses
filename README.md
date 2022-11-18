@@ -31,6 +31,6 @@ alias gitssh='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/private_openssh.ppk'
 alias comt='~/scripts/commit-with-ticket.sh'
 alias ta='XDEBUG_MODE=coverage composer testall'
 alias t='XDEBUG_MODE=coverage composer phpunit'
-alias pull-in-dir='ls | xargs -I{} git -C {} pull'
+alias pull-in-dir='ls -d */ | xargs -I{} git -C {} pull'
 follow-redirects() { wget -S --spider "$1" 2>&1  | grep -oP '^--[[:digit:]: -]{19}--  \K.*'; }
 ```
