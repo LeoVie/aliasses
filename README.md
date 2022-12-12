@@ -34,4 +34,6 @@ alias t='XDEBUG_MODE=coverage composer phpunit'
 alias pull-in-dir='ls -d */ | xargs -I{} git -C {} pull'
 alias pst='phpstorm'
 follow-redirects() { wget -S --spider "$1" 2>&1  | grep -oP '^--[[:digit:]: -]{19}--  \K.*'; }
+compress-pdf() { gs -sDEVICE=pdfwrite -DCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$2" "$1"; }
+pdf-to-grayscale() { gs -sDEVICE=pdfwrite -dProcessColorModel=/DeviceGray -dColorConversionStrategy=/Gray -dPDFUseOldCMS=false -o "$2" -f "$1"; }
 ```
