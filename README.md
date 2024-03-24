@@ -56,7 +56,37 @@ alias ta='XDEBUG_MODE=coverage composer testall'
 alias t='XDEBUG_MODE=coverage composer phpunit'
 alias pull-in-dir='ls -d */ | xargs -I{} git -C {} pull'
 alias pst='phpstorm'
+alias nproc="sysctl -n hw.physicalcpu"
 follow-redirects() { wget -S --spider "$1" 2>&1  | grep -oP '^--[[:digit:]: -]{19}--  \K.*'; }
 compress-pdf() { gs -sDEVICE=pdfwrite -DCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$2" "$1"; }
 pdf-to-grayscale() { gs -sDEVICE=pdfwrite -dProcessColorModel=/DeviceGray -dColorConversionStrategy=/Gray -dPDFUseOldCMS=false -o "$2" -f "$1"; }
+
+# https://localheinz.com/articles/2020/05/05/switching-between-php-versions-when-using-homebrew/
+# determine versions of PHP installed with HomeBrew
+installedPhpVersions=($(brew ls --versions | ggrep -E 'php(@.*)?\s' | ggrep -oP '(?<=\s)\d\.\d' | uniq | sort))
+
+# create alias for every version of PHP installed with HomeBrew
+for phpVersion in ${installedPhpVersions[*]}; do
+    value="{"
+
+    for otherPhpVersion in ${installedPhpVersions[*]}; do
+        if [ "${otherPhpVersion}" = "${phpVersion}" ]; then
+            continue
+        fi
+
+        # unlink other PHP version
+        value="${value} brew unlink php@${otherPhpVersion};"
+    done
+
+    # link desired PHP version
+    value="${value} brew link php@${phpVersion} --force --overwrite; } &> /dev/null && php -v"
+
+    alias "${phpVersion}"="${value}"
+done
+
+
+installedServices=($(ls /Users/lviezens/development/customerce))
+for service in ${installedServices[*]}; do
+    alias "$service"="phpstorm /Users/lviezens/development/customerce/$service"
+done
 ```
