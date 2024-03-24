@@ -85,8 +85,8 @@ for phpVersion in ${installedPhpVersions[*]}; do
 done
 
 
-installedServices=($(ls /Users/lviezens/development/customerce))
+installedServices=($(ls ~/development/services))
 for service in ${installedServices[*]}; do
-    alias "$service"="phpstorm /Users/lviezens/development/customerce/$service"
+    alias "$service"="phpstorm ~/development/services/$service"
 done
 ```
