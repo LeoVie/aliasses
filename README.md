@@ -8,6 +8,29 @@
   com = commit -m
 ```
 
+### Use different configs for different directories
+`.gitconfig`:
+```
+[includeIf "gitdir:~/development/company/"]
+  path = .gitconfig-company
+[includeIf "gitdir:~/development/private/"]
+  path = .gitconfig-private
+```
+
+`.gitconfig-company`:
+```
+[user]
+name = Name
+email = name@company.com
+```
+
+`.gitconfig-private`:
+```
+[user]
+name = Name
+email = name@private.com
+```
+
 ## Bash (.bashrc)
 ```
 alias compi='composer install --prefer-source'
