@@ -47,6 +47,7 @@ alias pst='phpstorm'
 alias nproc="sysctl -n hw.physicalcpu"
 follow-redirects() { wget -S --spider "$1" 2>&1  | grep -oP '^--[[:digit:]: -]{19}--  \K.*'; }
 alias mergepdf='qpdf --empty --pages [0-9][0-9]_*.pdf -- '
+alias flushdnscache="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 compress-pdf() { gs -sDEVICE=pdfwrite -DCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$2" "$1"; }
 pdf-to-grayscale() { gs -sDEVICE=pdfwrite -dProcessColorModel=/DeviceGray -dColorConversionStrategy=/Gray -dPDFUseOldCMS=false -o "$2" -f "$1"; }
 rebaseonto() {
